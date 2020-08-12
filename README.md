@@ -23,11 +23,9 @@
       curl -H "Authorization:your_token" http://yourservername/documents/getdocuments
     Или же конкретный документ посредством указания GET параметра id
       curl -H "Authorization:your_token" http://yourservername/documents/getdocument?id=n
-      В случае, если документ с заданным id не найден у аутентифицированного пользователя API вернет заголовок "HTTP/1.1 400 Bad Request" с телом ответа "Документ не найден".
-      
-    Для редактирования документа, выполните следующий запрос:
+      В случае, если документ с заданным id не найден у аутентифицированного пользователя API вернет заголовок "HTTP/1.1 400 Bad Request" с телом ответа "Документ не найден".fad
+      Для редактирования документа, выполните следующий запрос:
       curl -d @editDocument.json -H "Authorization:your_token" -H "Content-Type: application/json" -X PUT http://yourservername/documents/editdocument
       В случае, если документ с соответствующим id в теле запроса не будет найден у пользователя или вовсе не будет существовать, или данные в теле запроса будут абсолютно идентичны данным редактируемого документа, то API вернет заголовок "HTTP/1.1 400 Bad Request" с телом ответа "Данный документ не существует или внесенные данные совпадают с таковыми в документе".
     Для удаления документа, выполните следующий запрос:
       curl -d @deleteDocument.json -H "Authorization:your_token" -H "Content-Type: application/json" -X DELETE http://yourservername/documents/deletedocument
-      
